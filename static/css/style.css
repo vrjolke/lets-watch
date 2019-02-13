@@ -1,0 +1,71 @@
+select, input[type=button] {
+    display: block;
+}
+
+select, input {
+    margin: 10px;
+}
+
+select {
+    width: 187px;
+}
+
+.generate-data {
+    float: left;
+}
+
+.container {
+    width: 60%;
+    height: 50%;
+    display: flex;
+    margin: 0 auto;
+}
+
+#movie {
+    float: right;
+    display: inline-flex;
+    margin-left: 30px;
+}
+
+#movie-inner {
+    margin-left: 20px;
+}
+
+span {
+    margin-left: 17px;
+}
+
+#loader {
+    display:none;
+    left: 68%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: 35px 0 0 200px;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 0.5s linear infinite;
+    animation: spin 0.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

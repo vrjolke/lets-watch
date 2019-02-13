@@ -3,8 +3,11 @@ function main() {
 }
 
 function getRandomMovie() {
+    $('#movie').html("");
+    $('#loader').css('display', 'block');
     const url = '/get/movie';
     $.getJSON(url, function (response) {
+        $('#loader').css('display', 'none');
         console.log(response);
         printMovieData(response);
     });
