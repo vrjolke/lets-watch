@@ -9,7 +9,7 @@ tmdb.API_KEY = '3bd3415ab14ed2107bb5f34db8b8c587'   #TODO save to env. variable
 
 
 @app.route('/')
-def hello_world():
+def index():
     genre = tmdb.Genres()
     genres = genre.movie_list()['genres']
     return render_template('index.html', genres=genres)

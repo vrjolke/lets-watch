@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    <script>
+<div class="container">
+    <div class="generate-data">
+        <select>
+            <option selected>All genres</option>
+            {% for genre in genres %}
+                <option id="{{ genre.id }}">{{ genre.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="checkbox" name="movies"checked>Movies
+        <input type="checkbox" name="shows" disabled>TV Shows
+        <input id="getRandomMovie" type="button" value="Give me something to watch!">
+    </div>
+     <div id="loader"></div>
+    <div id="movie">
 
-    </script>
+    </div>
+</div>
 </body>
 </html>
