@@ -58,8 +58,11 @@ function printMovieData(movieData) {
         <img src="http://image.tmdb.org/t/p/w185/${movieData.poster_path}">
         <div id="movie-inner">
             <h2>${movieData.title}</h2>
-            <p>${movieData.release_date.substr(0, 4)}<span>Score: ${movieData.vote_average}</span></p>
+            <div class="movie-details">
+                <p>${movieData.release_date.substr(0, 4)}<span>Score: ${movieData.vote_average}</span></p>
+            </div>
             <p>${shortenDescription(movieData.overview)}</p>
+            
         </div>    
     `;
 
@@ -68,9 +71,10 @@ function printMovieData(movieData) {
 
 
 function shortenDescription(description){
-    if(description.length > 290){
-        description = description.substr(0,260).substr(0,description.lastIndexOf(" ")+2);
-        description += "[...]";
+    if(description.length > 260){
+        description = description.substr(0,260);
+        description = description.substr(0,description.lastIndexOf(" "));
+        description += " [...]";
     }
     return description;
 }
