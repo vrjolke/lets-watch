@@ -12,6 +12,7 @@ select {
 
 .generate-data {
     float: left;
+    margin-top: 50px;
     max-width: 200px;
 }
 
@@ -20,7 +21,7 @@ html {
 }
 
 body * {
-    font-family: 'ProximaNova-Medium', Arial, sans-serif;
+    font-family: 'PT Sans', sans-serif;
 
 }
 
@@ -29,10 +30,10 @@ body * {
 }
 
 .container {
-    width: 65%;
+    width: 40%;
     height: 50%;
     display: flex;
-    margin: 100px auto;
+    margin: 40px auto;
     color: #fff;
     background-color: #394049;
     padding: 19px;
@@ -58,22 +59,21 @@ span {
 
 img {
     max-height: 285px;
+    margin-top: 15px;
 }
 
 #loader {
     display: none;
     z-index: 1;
-    width: 150px;
-    height: 150px;
-    margin: 114px 0 0 440px;
-    border: 8px solid #f3f3f3;
+    margin: 130px 0 0 440px;
+    border: 6px solid #394049;
     border-radius: 50%;
-    border-top: 8px solid #3498db;
-    width: 40px;
-    height: 40px;
-    -webkit-animation: spin 0.5s linear infinite;
+    border-top: 6px solid #3498db;
+    width: 55px;
+    height: 55px;
+    -webkit-animation: spin 0.7s linear infinite;
     position: fixed;
-    animation: spin 0.5s linear infinite;
+    animation: spin 0.7s linear infinite;
 }
 
 @-webkit-keyframes spin {
@@ -132,7 +132,30 @@ img {
     width: 220px;
 }
 
-.radio-div{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.radio-div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #fefe;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.movie-details {
+    font-size: 14px;
+    color: #cccec2;
+}
+
+#welcome-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 15px;
+    width: 50%;
+    margin: 0 auto;
 }

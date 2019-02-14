@@ -6,8 +6,10 @@
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 <body>
+<h2>What should I watch?</h2>
 <div class="container">
     <div class="generate-data">
         <select id="movie-genres-select" class="btn button-a">
@@ -26,10 +28,13 @@
             <input id="movie-cb" class="type-checkbox" type="radio" name="type" checked>Movies
             <input id="show-cb" class="type-checkbox" type="radio" name="type">TV Shows
         </div>
-        <input id="getRandomMovie" type="submit" class="btn button-a" value="What should I watch?">
+        <input id="getRandomMovie" type="submit" class="btn button-a" value="Randomize">
     </div>
     <div id="loader"></div>
     <div id="movie">
+        <div id="welcome-text">
+            <p>Can't decide? No worries!</p>
+        </div>
     </div>
 </div>
 </body>
