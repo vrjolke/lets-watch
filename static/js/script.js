@@ -47,10 +47,18 @@ function getRandomMovie() {
         type: "POST",
         url: url,
         data: getSelectedGenre(),
+        retryLimit: 5,
         success: function (response) {
             $('#loader').css('display', 'none');
             console.log(response);
             printMovieData(response);
+        },error : function() {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                $.ajax(this);
+                return;
+            }
+            return;
         }
     });
 }

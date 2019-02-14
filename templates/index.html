@@ -19,7 +19,7 @@
             {% endfor %}
         </select>
         <select id="shows-genres-select" class="btn button-a">
-            <option selected>All genres</option>
+            <option value="0" selected>All genres</option>
             {% for genre in tv_show_genres %}
                 <option value="{{ genre.id }}">{{ genre.name }}</option>
             {% endfor %}

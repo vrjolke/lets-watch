@@ -15,13 +15,22 @@ def get_genres():
 def fill_to_watch_list(is_movie, required_genre):
     discover = tmdb.Discover()
     watch_list = []
-    page = random.randint(1, 500)
-    if (is_movie):
-        watch_list.append(discover.movie(page=page, language='EN')['results'])
+    if is_movie:
+        if required_genre != "0":
+            page = random.randint(1, 200)
+            watch_list.append(discover.movie(page=page, language='EN', with_genres=required_genre)['results'])
+        else:
+            page = random.randint(1, 500)
+            watch_list.append(discover.movie(page=page, language='EN')['results'])
     else:
-        watch_list.append(discover.tv(page=page, language='EN')['results'])
-
+        if required_genre != "0":
+            page = random.randint(1, 100)
+            watch_list.append(discover.tv(page=page, language='EN', with_genres=required_genre)['results'])
+        else:
+            page = random.randint(1, 500)
+            watch_list.append(discover.tv(page=page, language='EN')['results'])
     watch_list = list(itertools.chain.from_iterable(watch_list))
+
     return watch_list
 
 

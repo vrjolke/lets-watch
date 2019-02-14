@@ -13,18 +13,17 @@ def index():
 @app.route('/get/movie', methods=['GET', 'POST'])
 def get_movie():
     required_genre = request.form.to_dict()['id']
-    print(required_genre)
     movies = dm.fill_to_watch_list(True, required_genre)
     movie = dm.get_random_movie(movies)
     names = dm.get_genre_name_by_id(movie['genre_ids'])
     movie['genre_names'] = names[:2]
-    print(movie)
     return jsonify(movie)
 
 
 @app.route('/get/tv', methods=['GET', 'POST'])
 def get_show():
-    shows = dm.fill_to_watch_list(False)
+    required_genre = request.form.to_dict()['id']
+    shows = dm.fill_to_watch_list(False, required_genre)
     show = dm.get_random_movie(shows)
     # fix different naming
     show['release_date'] = show.pop('first_air_date')
