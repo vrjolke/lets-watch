@@ -13,15 +13,15 @@
 <div class="container">
     <div class="generate-data">
         <select id="movie-genres-select" class="btn button-a">
-            <option selected>All genres</option>
+            <option value="0" selected>All genres</option>
             {% for genre in movie_genres %}
-                <option id="{{ genre.id }}">{{ genre.name }}</option>
+                <option value="{{ genre.id }}">{{ genre.name }}</option>
             {% endfor %}
         </select>
         <select id="shows-genres-select" class="btn button-a">
             <option selected>All genres</option>
             {% for genre in tv_show_genres %}
-                <option id="{{ genre.id }}">{{ genre.name }}</option>
+                <option value="{{ genre.id }}">{{ genre.name }}</option>
             {% endfor %}
         </select>
         <div class="radio-div">

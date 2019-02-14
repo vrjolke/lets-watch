@@ -17,7 +17,11 @@ function changeGenreList() {
 
 
 function getSelectedGenre() {
-
+    if (getSelectedType() == "movie") {
+        return {"id": $('#movie-genres-select').val()}
+    } else if (getSelectedType() == "tv") {
+        return {"id": $('#shows-genres-select').val()}
+    }
 }
 
 //movie or tv show
@@ -37,12 +41,12 @@ function getRandomMovie() {
     } else {
         url = 'get/tv';
     }
-
     $('#movie').html("");
     $('#loader').css('display', 'block');
     $.ajax({
         type: "POST",
         url: url,
+        data: getSelectedGenre(),
         success: function (response) {
             $('#loader').css('display', 'none');
             console.log(response);
@@ -59,9 +63,11 @@ function printMovieData(movieData) {
         <div id="movie-inner">
             <h2>${movieData.title}</h2>
             <div class="movie-details">
-                <p>${movieData.release_date.substr(0, 4)}<span>Score: ${movieData.vote_average}</span></p>
+                <p>${movieData.release_date.substr(0, 4)}<span>Score: ${movieData.vote_average}</span>
+                  <span>${movieData.genre_names.map((item) => ` ${item}`).join(',')}</span> 
+                </p>
             </div>
-            <p>${shortenDescription(movieData.overview)}</p>
+            <p id="movie-overview">${shortenDescription(movieData.overview)}</p>
             
         </div>    
     `;
@@ -70,10 +76,10 @@ function printMovieData(movieData) {
 }
 
 
-function shortenDescription(description){
-    if(description.length > 260){
-        description = description.substr(0,260);
-        description = description.substr(0,description.lastIndexOf(" "));
+function shortenDescription(description) {
+    if (description.length > 260) {
+        description = description.substr(0, 260);
+        description = description.substr(0, description.lastIndexOf(" "));
         description += " [...]";
     }
     return description;
