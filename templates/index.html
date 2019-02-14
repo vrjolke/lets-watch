@@ -10,21 +10,23 @@
 <body>
 <div class="container">
     <div class="generate-data">
-        <select id="movie-genres-select">
+        <select id="movie-genres-select" class="btn button-a">
             <option selected>All genres</option>
             {% for genre in movie_genres %}
                 <option id="{{ genre.id }}">{{ genre.name }}</option>
             {% endfor %}
         </select>
-        <select id="shows-genres-select">
+        <select id="shows-genres-select" class="btn button-a">
             <option selected>All genres</option>
             {% for genre in tv_show_genres %}
                 <option id="{{ genre.id }}">{{ genre.name }}</option>
             {% endfor %}
         </select>
-        <input id="movie-cb" class="type-checkbox" type="radio" name="type" checked>Movies
-        <input id="show-cb" class="type-checkbox" type="radio" name="type">TV Shows
-        <input id="getRandomMovie" type="submit" value="Give me something to watch!">
+        <div class="radio-div">
+            <input id="movie-cb" class="type-checkbox" type="radio" name="type" checked>Movies
+            <input id="show-cb" class="type-checkbox" type="radio" name="type">TV Shows
+        </div>
+        <input id="getRandomMovie" type="submit" class="btn button-a" value="What should I watch?">
     </div>
     <div id="loader"></div>
     <div id="movie">
