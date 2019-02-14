@@ -59,11 +59,20 @@ function printMovieData(movieData) {
         <div id="movie-inner">
             <h2>${movieData.title}</h2>
             <p>${movieData.release_date.substr(0, 4)}<span>Score: ${movieData.vote_average}</span></p>
-            <p>${movieData.overview}</p>
+            <p>${shortenDescription(movieData.overview)}</p>
         </div>    
     `;
 
     $('#movie').html(movieHtml);
+}
+
+
+function shortenDescription(description){
+    if(description.length > 290){
+        description = description.substr(0,260).substr(0,description.lastIndexOf(" ")+2);
+        description += "[...]";
+    }
+    return description;
 }
 
 function movieOrShow() {
