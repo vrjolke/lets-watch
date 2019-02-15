@@ -13,15 +13,19 @@ select {
 .generate-data {
     float: left;
     margin-top: 50px;
-    max-width: 200px;
-}
-
-html {
-    background-color: #1c2e40bd;
+    max-width: 205px;
 }
 
 body * {
     font-family: 'PT Sans', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(#041c31d4, #1c2e4085);
 
 }
 
@@ -35,7 +39,7 @@ body * {
     display: flex;
     margin: 40px auto;
     color: #fff;
-    background-color: #394049;
+    background-color: #313740;
     padding: 19px;
     border-radius: 6px;
     min-height: 316px;
@@ -66,7 +70,7 @@ img {
     display: none;
     z-index: 1;
     margin: 130px 0 0 440px;
-    border: 6px solid #394049;
+    border: 6px solid transparent;
     border-radius: 50%;
     border-top: 6px solid #3498db;
     width: 55px;
@@ -95,9 +99,10 @@ img {
 }
 
 .btn:hover {
-    color: #2e6da4;
-    background-color: #f3f3f3;
-    border-color: #2e6da4;
+    background-color: #f3f3f3f3;
+    color: #337ab7;
+    border:2px solid #337ab7;
+    font-weight: bold;
 }
 
 .btn {
@@ -128,7 +133,6 @@ img {
 .button-a {
     color: #fff;
     background-color: #337ab7;
-    border-color: #2e6da4;
     width: 220px;
 }
 
@@ -136,6 +140,7 @@ img {
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
+    display: inline-flex;
 }
 
 h2 {
@@ -160,6 +165,66 @@ h2 {
     margin: 0 auto;
 }
 
-#movie-overview{
+#movie-overview {
     text-align: justify;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #fefe;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #337ab7;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.cb {
+    display: flex;
+    margin-left: 15px;
 }

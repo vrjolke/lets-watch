@@ -25,8 +25,14 @@
             {% endfor %}
         </select>
         <div class="radio-div">
-            <input id="movie-cb" class="type-checkbox" type="radio" name="type" checked>Movies
-            <input id="show-cb" class="type-checkbox" type="radio" name="type">TV Shows
+            <div class="cb">
+                <input id="movie-cb" class="type-checkbox" type="radio" name="type" checked>
+                <label for="movie-cb">Movies</label>
+            </div>
+            <div class="cb">
+                <input id="show-cb" class="type-checkbox" type="radio" name="type">
+                <label for="show-cb">TV Shows</label>
+            </div>
         </div>
         <input id="getRandomMovie" type="submit" class="btn button-a" value="Randomize">
     </div>
